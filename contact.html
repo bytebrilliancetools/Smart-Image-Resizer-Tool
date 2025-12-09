@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Smart Image Resizer Tool</title>
+    <meta name="description" content="Get in touch with the SmartImageResizer team. We're here to help with your questions and feedback.">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">SmartImageResizer</div>
+            <nav class="nav">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="contact.html" class="active">Contact</a>
+                <a href="privacy.html">Privacy</a>
+                <a href="terms.html">Terms</a>
+                <a href="disclaimer.html">Disclaimer</a>
+                <a href="dmca.html">DMCA</a>
+            </nav>
+            <div class="mobile-menu-toggle">☰</div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>Contact Us</h1>
+            <p>We'd love to hear from you</p>
+        </div>
+    </section>
+
+    <!-- Content -->
+    <section class="tool-section">
+        <div class="container">
+            <div class="content-page">
+                <h1>Get In Touch</h1>
+                
+                <p>Have a question, suggestion, or feedback? We're here to help! Fill out the form below and we'll get back to you as soon as possible.</p>
+
+                <form class="contact-form" id="contactForm">
+                    <div class="form-group">
+                        <label for="name">Your Name *</label>
+                        <input type="text" id="name" name="name" required placeholder="Enter your full name">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Your Email *</label>
+                        <input type="email" id="email" name="email" required placeholder="your.email@example.com">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="subject">Subject *</label>
+                        <input type="text" id="subject" name="subject" required placeholder="What is this regarding?">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Your Message *</label>
+                        <textarea id="message" name="message" required placeholder="Tell us more about your inquiry..."></textarea>
+                    </div>
+
+                    <button type="submit" class="submit-btn">Send Message</button>
+                </form>
+
+                <div id="formResponse" style="display: none; margin-top: 2rem; padding: 1rem; border-radius: 8px; text-align: center; font-weight: 600;"></div>
+
+                <h2 style="margin-top: 3rem;">Other Ways to Reach Us</h2>
+
+                <p><strong>Email:</strong> support@smartimageresizer.com</p>
+                <p><strong>Response Time:</strong> We typically respond within 24-48 hours during business days.</p>
+
+                <h2>Frequently Asked Questions</h2>
+
+                <h3>Is SmartImageResizer really free?</h3>
+                <p>Yes! SmartImageResizer is completely free to use with no hidden charges or subscription fees.</p>
+
+                <h3>Are my images stored on your servers?</h3>
+                <p>No. All image processing happens locally in your browser. Your images never leave your device, ensuring complete privacy.</p>
+
+                <h3>What file formats do you support?</h3>
+                <p>We support JPG, PNG, WebP, BMP, and TIFF input formats. You can convert between JPEG, PNG, and WebP for output.</p>
+
+                <h3>Is there a file size limit?</h3>
+                <p>Since processing happens in your browser, there are no server-imposed file size limits. However, very large files may take longer to process depending on your device's capabilities.</p>
+
+                <h3>Can I use this tool for commercial projects?</h3>
+                <p>Yes! You're free to use SmartImageResizer for both personal and commercial projects.</p>
+
+                <h3>Do you offer batch processing?</h3>
+                <p>Batch processing is currently in development and will be available in a future update.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>© 2025 SmartImageResizer — All Rights Reserved</p>
+            <p>Website Crafted by ApexWebWorks</p>
+            <div class="footer-links">
+                <a href="privacy.html">Privacy</a>
+                <a href="terms.html">Terms</a>
+                <a href="contact.html">Contact</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // Contact Form Submission Handler
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const formResponse = document.getElementById('formResponse');
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const subject = document.getElementById('subject').value;
+            const message = document.getElementById('message').value;
+            
+            // Simulate form submission (In production, this would send to a server)
+            formResponse.style.display = 'block';
+            formResponse.style.background = 'rgba(0, 167, 157, 0.1)';
+            formResponse.style.color = '#00A79D';
+            formResponse.style.border = '2px solid #00A79D';
+            formResponse.textContent = `Thank you, ${name}! Your message has been received. We'll respond to ${email} within 24-48 hours.`;
+            
+            // Reset form
+            this.reset();
+            
+            // Hide message after 10 seconds
+            setTimeout(() => {
+                formResponse.style.display = 'none';
+            }, 10000);
+        });
+    </script>
+</body>
+</html>

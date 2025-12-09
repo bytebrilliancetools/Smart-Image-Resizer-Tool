@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - Smart Image Resizer Tool</title>
+    <meta name="description" content="Learn about our image resizing technology and how it works to deliver professional quality results.">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">SmartImageResizer</div>
+            <nav class="nav">
+                <a href="index.html">Home</a>
+                <a href="about.html" class="active">About</a>
+                <a href="contact.html">Contact</a>
+                <a href="privacy.html">Privacy</a>
+                <a href="terms.html">Terms</a>
+                <a href="disclaimer.html">Disclaimer</a>
+                <a href="dmca.html">DMCA</a>
+            </nav>
+            <div class="mobile-menu-toggle">☰</div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>About Our Image Resizer</h1>
+            <p>Understanding the technology behind professional image resizing</p>
+        </div>
+    </section>
+
+    <!-- Content -->
+    <section class="tool-section">
+        <div class="container">
+            <div class="content-page">
+                <h1>About SmartImageResizer</h1>
+                
+                <p>Welcome to SmartImageResizer, your go-to online tool for professional image resizing, compression, and format conversion. Our platform leverages cutting-edge browser-based technology to deliver fast, secure, and high-quality image processing without the need for server uploads.</p>
+
+                <h2>How Image Resizing Works</h2>
+                
+                <p>Image resizing is the process of changing the dimensions (width and height) of a digital image while attempting to preserve its visual quality. Our tool uses advanced algorithms to achieve professional results:</p>
+
+                <h3>1. Canvas-Based Processing</h3>
+                <p>We utilize the HTML5 Canvas API, a powerful browser technology that allows direct pixel manipulation. When you upload an image:</p>
+                <ul>
+                    <li>The image is loaded into a canvas element in your browser's memory</li>
+                    <li>The canvas is resized to your specified dimensions</li>
+                    <li>Advanced interpolation algorithms redraw the image at the new size</li>
+                    <li>The result is rendered for preview and download</li>
+                </ul>
+
+                <h3>2. Image Smoothing Algorithms</h3>
+                <p>Our tool employs high-quality image smoothing (also called anti-aliasing) to ensure the best possible results:</p>
+                <ul>
+                    <li><strong>Bilinear Interpolation:</strong> Calculates pixel values by averaging the colors of surrounding pixels</li>
+                    <li><strong>Bicubic Interpolation:</strong> Uses a more sophisticated algorithm that considers 16 surrounding pixels for smoother results</li>
+                    <li><strong>Quality Setting:</strong> Set to "high" by default for professional-grade output</li>
+                </ul>
+
+                <h3>3. Aspect Ratio Preservation</h3>
+                <p>Maintaining aspect ratio is crucial for preventing image distortion. When enabled, our tool automatically calculates proportional dimensions:</p>
+                <ul>
+                    <li>Original ratio = Width ÷ Height</li>
+                    <li>When you change width, height is recalculated: New Height = New Width ÷ Original Ratio</li>
+                    <li>Vice versa for height changes</li>
+                </ul>
+
+                <h3>4. Transparency Handling</h3>
+                <p>For PNG and WebP images with transparent backgrounds:</p>
+                <ul>
+                    <li>Alpha channel information is preserved during resizing</li>
+                    <li>Transparent pixels maintain their opacity levels</li>
+                    <li>No white background is added unless converting to JPEG</li>
+                </ul>
+
+                <h2>The Technology Stack</h2>
+
+                <h3>Client-Side Processing</h3>
+                <p>Unlike many online image tools, SmartImageResizer processes everything locally in your browser:</p>
+                <ul>
+                    <li><strong>HTML5 Canvas:</strong> For image rendering and manipulation</li>
+                    <li><strong>FileReader API:</strong> For loading images from your device</li>
+                    <li><strong>Blob API:</strong> For creating downloadable files</li>
+                    <li><strong>JavaScript:</strong> For orchestrating the entire process</li>
+                </ul>
+
+                <h3>Benefits of Client-Side Processing</h3>
+                <ul>
+                    <li><strong>Privacy:</strong> Your images never leave your device</li>
+                    <li><strong>Speed:</strong> No upload/download delays to remote servers</li>
+                    <li><strong>No File Size Limits:</strong> Process large images without server restrictions</li>
+                    <li><strong>Works Offline:</strong> Once loaded, the tool can work without internet</li>
+                </ul>
+
+                <h2>Image Compression Technology</h2>
+
+                <p>Our quality slider controls the compression level applied to your output image:</p>
+                <ul>
+                    <li><strong>100% Quality:</strong> Minimal compression, largest file size, maximum detail</li>
+                    <li><strong>92% Quality (Default):</strong> Optimal balance between quality and file size</li>
+                    <li><strong>70-80% Quality:</strong> Good for web use, significantly smaller files</li>
+                    <li><strong>Below 70%:</strong> Maximum compression, some quality loss visible</li>
+                </ul>
+
+                <p>The compression algorithm removes redundant data while attempting to preserve visual fidelity. For JPEG, this involves discrete cosine transform (DCT) and quantization. For PNG, lossless compression using DEFLATE algorithm is employed.</p>
+
+                <h2>Format Conversion Explained</h2>
+
+                <h3>JPEG (Joint Photographic Experts Group)</h3>
+                <ul>
+                    <li>Best for photographs and complex images</li>
+                    <li>Lossy compression - some quality is sacrificed for smaller files</li>
+                    <li>No transparency support</li>
+                    <li>Excellent browser and device compatibility</li>
+                </ul>
+
+                <h3>PNG (Portable Network Graphics)</h3>
+                <ul>
+                    <li>Best for graphics, logos, and images requiring transparency</li>
+                    <li>Lossless compression - no quality loss</li>
+                    <li>Supports full alpha channel (transparency)</li>
+                    <li>Larger file sizes than JPEG for photos</li>
+                </ul>
+
+                <h3>WebP</h3>
+                <ul>
+                    <li>Modern format developed by Google</li>
+                    <li>Supports both lossy and lossless compression</li>
+                    <li>Transparency support like PNG</li>
+                    <li>Typically 25-35% smaller than JPEG/PNG</li>
+                    <li>Excellent for modern web applications</li>
+                </ul>
+
+                <h2>Our Mission</h2>
+
+                <p>At SmartImageResizer, we believe image processing tools should be:</p>
+                <ul>
+                    <li><strong>Free and Accessible:</strong> No subscriptions, no hidden fees</li>
+                    <li><strong>Privacy-Focused:</strong> Your data stays on your device</li>
+                    <li><strong>Professional Quality:</strong> Results that meet industry standards</li>
+                    <li><strong>User-Friendly:</strong> Intuitive interface for everyone</li>
+                    <li><strong>Fast and Efficient:</strong> Instant processing without delays</li>
+                </ul>
+
+                <h2>Who Can Benefit?</h2>
+
+                <ul>
+                    <li><strong>Web Developers:</strong> Optimize images for faster website loading</li>
+                    <li><strong>Graphic Designers:</strong> Quick resizing for mockups and presentations</li>
+                    <li><strong>Social Media Managers:</strong> Resize images for different platforms</li>
+                    <li><strong>Photographers:</strong> Create web-optimized versions of high-res photos</li>
+                    <li><strong>E-commerce Sellers:</strong> Prepare product images for online listings</li>
+                    <li><strong>Bloggers and Content Creators:</strong> Optimize images for articles</li>
+                </ul>
+
+                <h2>Continuous Improvement</h2>
+
+                <p>We're committed to enhancing SmartImageResizer with new features and improvements. Our roadmap includes:</p>
+                <ul>
+                    <li>Batch processing for multiple images</li>
+                    <li>Advanced filters and effects</li>
+                    <li>Additional output formats (AVIF, HEIC)</li>
+                    <li>Smart cropping and content-aware scaling</li>
+                    <li>Watermark addition capabilities</li>
+                </ul>
+
+                <p>Thank you for choosing SmartImageResizer. We're here to make your image processing tasks simpler, faster, and more efficient.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>© 2025 SmartImageResizer — All Rights Reserved</p>
+            <p>Website Crafted by ApexWebWorks</p>
+            <div class="footer-links">
+                <a href="privacy.html">Privacy</a>
+                <a href="terms.html">Terms</a>
+                <a href="contact.html">Contact</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

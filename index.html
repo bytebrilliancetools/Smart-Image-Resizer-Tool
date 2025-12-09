@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Image Resizer Tool - Resize Images Online Free</title>
+    <meta name="description" content="Professional online image resizer tool. Resize, convert, and compress images instantly. Support for JPG, PNG, WEBP, BMP, TIFF formats.">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">SmartImageResizer</div>
+            <nav class="nav">
+                <a href="index.html" class="active">Home</a>
+                <a href="about.html">About</a>
+                <a href="contact.html">Contact</a>
+                <a href="privacy.html">Privacy</a>
+                <a href="terms.html">Terms</a>
+                <a href="disclaimer.html">Disclaimer</a>
+                <a href="dmca.html">DMCA</a>
+            </nav>
+            <div class="mobile-menu-toggle">☰</div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>Smart Image Resizer Tool</h1>
+            <p>Resize, compress, and convert images instantly with professional quality</p>
+        </div>
+    </section>
+
+    <!-- Image Resizer Tool -->
+    <section class="tool-section">
+        <div class="container">
+            <div class="tool-wrapper">
+                <!-- Controls Panel -->
+                <div class="controls-panel">
+                    <div class="glass-card">
+                        <h2>Image Settings</h2>
+                        
+                        <!-- Upload Area -->
+                        <div class="upload-area" id="uploadArea">
+                            <div class="upload-icon">📁</div>
+                            <p>Drag & Drop Image Here</p>
+                            <p class="upload-subtext">or click to browse</p>
+                            <input type="file" id="fileInput" accept="image/*" hidden>
+                        </div>
+
+                        <!-- Image Info -->
+                        <div class="image-info" id="imageInfo" style="display: none;">
+                            <h3>Image Information</h3>
+                            <div class="info-row">
+                                <span>Original Size:</span>
+                                <span id="originalSize">-</span>
+                            </div>
+                            <div class="info-row">
+                                <span>Original Dimensions:</span>
+                                <span id="originalDimensions">-</span>
+                            </div>
+                            <div class="info-row">
+                                <span>New Dimensions:</span>
+                                <span id="newDimensions">-</span>
+                            </div>
+                            <div class="info-row">
+                                <span>Estimated Size:</span>
+                                <span id="estimatedSize">-</span>
+                            </div>
+                        </div>
+
+                        <!-- Dimension Controls -->
+                        <div class="dimension-controls" id="dimensionControls" style="display: none;">
+                            <h3>Resize Dimensions</h3>
+                            <div class="input-group">
+                                <label for="widthInput">Width (px)</label>
+                                <input type="number" id="widthInput" min="1" max="10000" placeholder="Width">
+                            </div>
+                            <div class="input-group">
+                                <label for="heightInput">Height (px)</label>
+                                <input type="number" id="heightInput" min="1" max="10000" placeholder="Height">
+                            </div>
+                            <div class="checkbox-group">
+                                <label>
+                                    <input type="checkbox" id="aspectRatio" checked>
+                                    Maintain Aspect Ratio
+                                </label>
+                            </div>
+
+                            <h3>Quick Presets</h3>
+                            <div class="preset-buttons">
+                                <button class="btn-preset" data-preset="1x">1x</button>
+                                <button class="btn-preset" data-preset="2x">2x</button>
+                                <button class="btn-preset" data-preset="4x">4x</button>
+                                <button class="btn-preset" data-preset="1080p">1080p</button>
+                                <button class="btn-preset" data-preset="4k">4K</button>
+                            </div>
+
+                            <h3>Quality & Format</h3>
+                            <div class="input-group">
+                                <label for="qualitySlider">Quality: <span id="qualityValue">92</span>%</label>
+                                <input type="range" id="qualitySlider" min="0" max="100" value="92">
+                            </div>
+
+                            <div class="input-group">
+                                <label for="formatSelect">Output Format</label>
+                                <select id="formatSelect">
+                                    <option value="image/jpeg">JPEG</option>
+                                    <option value="image/png">PNG</option>
+                                    <option value="image/webp">WEBP</option>
+                                </select>
+                            </div>
+
+                            <button class="btn-primary" id="applyBtn">Apply Changes</button>
+                            <button class="btn-secondary" id="downloadBtn" style="display: none;">Download Image</button>
+                            <button class="btn-secondary" id="resetBtn">Reset</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Preview Panel -->
+                <div class="preview-panel">
+                    <div class="glass-card">
+                        <div class="preview-toggle">
+                            <button class="toggle-btn active" id="originalToggle">Original</button>
+                            <button class="toggle-btn" id="processedToggle">Processed</button>
+                        </div>
+                        
+                        <div class="preview-container">
+                            <div class="preview-placeholder" id="previewPlaceholder">
+                                <p>Upload an image to see preview</p>
+                            </div>
+                            <canvas id="originalCanvas" style="display: none;"></canvas>
+                            <canvas id="processedCanvas" style="display: none;"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features-section">
+        <div class="container">
+            <h2>Why Choose Our Image Resizer?</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">⚡</div>
+                    <h3>Lightning Fast</h3>
+                    <p>Process images instantly using client-side canvas technology. No server delays.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔒</div>
+                    <h3>100% Private</h3>
+                    <p>All processing happens in your browser. Your images never leave your device.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🎨</div>
+                    <h3>Quality Preserved</h3>
+                    <p>Advanced algorithms maintain image quality and transparency during resizing.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📱</div>
+                    <h3>Fully Responsive</h3>
+                    <p>Works seamlessly on desktop, tablet, and mobile devices.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>© 2025 SmartImageResizer — All Rights Reserved</p>
+            <p>Website Crafted by ApexWebWorks</p>
+            <div class="footer-links">
+                <a href="privacy.html">Privacy</a>
+                <a href="terms.html">Terms</a>
+                <a href="contact.html">Contact</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
